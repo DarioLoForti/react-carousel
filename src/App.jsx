@@ -1,13 +1,10 @@
-import { useState } from 'react'
+import Carousel from "./assets/components/Carousel";
 
 
-function App() {
-  
-
+export default function () {
   return (
-    <>
-    </>
-  )
-}
-
-export default App
+    
+      <Carousel />
+    
+  );
+} 
