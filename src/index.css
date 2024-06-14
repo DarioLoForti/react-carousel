@@ -33,6 +33,7 @@ body{
   border: none;
   padding: 10px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .carousel-button:first-of-type {
@@ -65,4 +66,33 @@ body{
 
 .carousel-bullet.active {
   background-color: #fbff00;
+}
+.carousel-controls {
+  margin: 20px auto ;
+}
+
+.carousel-control-button {
+  background: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.carousel-control-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
 }

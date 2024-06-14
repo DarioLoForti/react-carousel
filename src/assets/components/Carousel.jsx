@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { IoCarSportSharp } from "react-icons/io5";
-
+import { FaCircleArrowRight as Next } from "react-icons/fa6";
+import { FaArrowCircleLeft as Prev } from "react-icons/fa";
 
 const slides = [
   {
@@ -27,6 +27,8 @@ const slides = [
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [autoplayInterval, setAutoplayInterval] = useState(null);
+  const [autoplay, setAutoplay] = useState(false);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -40,22 +42,61 @@ const Carousel = () => {
     setCurrentSlide(index);
   };
 
+  const startAutoplay = () => {
+    if (!autoplay) {
+      setAutoplay(true);
+      setAutoplayInterval(setInterval(() => {
+        nextSlide();
+      }, 3000)); // Cambia slide ogni 3 secondi
+    }
+  };
+
+  const stopAutoplay = () => {
+    if (autoplay) {
+      setAutoplay(false);
+      clearInterval(autoplayInterval);
+    }
+  };
+
+  const handlePrevClick = () => {
+    stopAutoplay();
+    prevSlide();
+  };
+
+  const handleNextClick = () => {
+    stopAutoplay();
+    nextSlide();
+  };
+
+  const handleBulletClick = (index) => {
+    stopAutoplay();
+    goToSlide(index);
+  };
+
   return (
     <div className="carousel">
       <div className="carousel-slide">
         <img src={slides[currentSlide].image} alt={slides[currentSlide].text} />
         <h2 className="title">{slides[currentSlide].text}</h2>
       </div>
-      <button onClick={prevSlide} className="carousel-button prev-button"><IoCarSportSharp /></button>
-      <button onClick={nextSlide} className="carousel-button next-button"><IoCarSportSharp /></button>
+      <button onClick={handlePrevClick} className="carousel-button prev-button"><Prev /></button>
+      <button onClick={handleNextClick} className="carousel-button next-button"><Next /></button>
       <div className="carousel-bullets">
         {slides.map((slide, index) => (
           <span
             key={index}
             className={`carousel-bullet ${index === currentSlide ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
+            onClick={() => handleBulletClick(index)}
           ></span>
         ))}
+      </div>
+      <div className="carousel-controls">
+        {!autoplay && (
+          <button onClick={startAutoplay} className="carousel-control-button">Play</button>
+        )}
+        {autoplay && (
+          <button onClick={stopAutoplay} className="carousel-control-button">Stop</button>
+        )}
       </div>
     </div>
   );
