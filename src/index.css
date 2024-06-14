@@ -9,7 +9,7 @@ body{
 .carousel {
   position: relative;
   width: 70%;
-  margin: 50px auto;
+  margin: 100px auto;
   text-align: center;
 }
 
@@ -21,7 +21,7 @@ body{
 
 .carousel-slide img {
   width: 1000px;
-  height: auto;
+  max-height: 550px;
 }
 
 .carousel-button {
@@ -44,6 +44,25 @@ body{
 }
 .title{
   color: white;
-  font-size: 2rem;
+  font-size: 3rem;
+  margin-top: 30px;
+}
+.carousel-bullets {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
+}
+
+.carousel-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.carousel-bullet.active {
+  background-color: #fbff00;
 }

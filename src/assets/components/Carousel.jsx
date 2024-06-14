@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { IoCarSportSharp } from "react-icons/io5";
 
+
 const slides = [
   {
     image: 'https://immagini.alvolante.it/sites/default/files/styles/image_gallery_big/public/news_galleria/2024/02/ferrari-sf24-formula-1.jpg?itok=-xivz59V',
@@ -35,14 +36,27 @@ const Carousel = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
   return (
     <div className="carousel">
       <div className="carousel-slide">
         <img src={slides[currentSlide].image} alt={slides[currentSlide].text} />
-        <h2 className='title'>{slides[currentSlide].text}</h2>
+        <h2 className="title">{slides[currentSlide].text}</h2>
       </div>
-      <button onClick={prevSlide} className="carousel-button"><IoCarSportSharp /></button>
-      <button onClick={nextSlide} className="carousel-button"><IoCarSportSharp /></button>
+      <button onClick={prevSlide} className="carousel-button prev-button"><IoCarSportSharp /></button>
+      <button onClick={nextSlide} className="carousel-button next-button"><IoCarSportSharp /></button>
+      <div className="carousel-bullets">
+        {slides.map((slide, index) => (
+          <span
+            key={index}
+            className={`carousel-bullet ${index === currentSlide ? 'active' : ''}`}
+            onClick={() => goToSlide(index)}
+          ></span>
+        ))}
+      </div>
     </div>
   );
 };
