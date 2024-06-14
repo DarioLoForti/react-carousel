@@ -17,11 +17,14 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .carousel-slide img {
   width: 1000px;
   max-height: 550px;
+  border-radius: 50px;
+  border: 5px solid white;
 }
 
 .carousel-button {
