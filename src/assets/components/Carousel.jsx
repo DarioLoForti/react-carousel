@@ -47,7 +47,7 @@ const Carousel = () => {
       setAutoplay(true);
       setAutoplayInterval(setInterval(() => {
         nextSlide();
-      }, 3000)); // Cambia slide ogni 3 secondi
+      }, 3000)); 
     }
   };
 
