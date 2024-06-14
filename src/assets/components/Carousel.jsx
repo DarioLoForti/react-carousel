@@ -22,7 +22,27 @@ const slides = [
   {
     image: 'https://i.ytimg.com/vi/vbg2IaCLXF4/maxresdefault.jpg',
     text: 'Aston Martin AMR24 2024'
-  }
+  },
+  {
+    image: 'https://cdn-img.automoto.it/images/36099786/1200x/20240207-154554044-4310.jpeg',
+    text: 'Alpine A522 2024'
+  },
+  {
+    image: 'https://www.goodwood.com/globalassets/.road--racing/f1/2024/---car-launches-and-liveries/haas/haas-f1-2024-livery-04.jpg?crop=(0,0,2600,1463)&width=1600',
+    text: 'Haas VF-24 2024'
+  },
+  {
+    image: 'https://www.wsupercars.com/thumbnails-wide/Formula-1/Sauber/2024-Formula1-Sauber-C44-001.jpg',
+    text: 'Sauber C44 2024'
+  },
+  {
+    image: 'https://www.f1-fansite.com/wp-content/uploads/2024/02/SI202402090087.jpg',
+    text: 'Rb Vcarb 01 2024'
+  },
+  {
+    image: 'https://www.f1-fansite.com/wp-content/uploads/2024/02/WilliamsF1_115544_HiRes.jpg',
+    text: 'Williams FW45 2024'
+  },
 ];
 
 const Carousel = () => {

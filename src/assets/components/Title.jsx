@@ -1,7 +1,7 @@
 const Title = () => {
     return (
         
-        <h1 className="center">My Carousel</h1>
+        <h1 className="center">F1 Teams 2024</h1>
         
     );
 }
